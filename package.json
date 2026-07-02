@@ -16,7 +16,8 @@
     "framer-motion": "^11.3.0",
     "lucide-react": "^0.400.0",
     "prisma": "^5.17.0",
-    "@prisma/client": "^5.17.0"
+    "@prisma/client": "^5.17.0",
+    "three": "^0.166.0"
   },
   "devDependencies": {
     "typescript": "^5",

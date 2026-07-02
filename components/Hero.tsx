@@ -1,5 +1,6 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { ChevronDown, MessageCircle, Users } from "lucide-react";
 import { Button } from "@/components/ui/Button";
@@ -8,6 +9,23 @@ import { BubbleField } from "@/components/ui/BubbleField";
 import { BRAND } from "@/lib/content.id";
 import { WA_ORDER, waLink } from "@/lib/config";
 import { trackEvent } from "@/components/ui/Analytics";
+
+// Lazy-loaded 3D scene — only downloads Three.js (~160KB gz) after page is interactive
+const BottleCanvas = dynamic(
+  () => import("@/components/three/BottleCanvas").then((m) => ({ default: m.BottleCanvas })),
+  {
+    ssr: false,
+    // PNG bottle shown instantly while 3D chunk loads
+    loading: () => (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src="/assets/bottle.png"
+        alt="Botol anana Super Oksigen"
+        className="h-[403px] md:h-[518px] w-auto mx-auto"
+      />
+    ),
+  }
+);
 
 export function Hero() {
   return (
@@ -69,27 +87,24 @@ export function Hero() {
           </h2>
         </motion.div>
 
-        {/* Bottle */}
+        {/* 3D Bottle — lazy loaded, PNG fallback during load */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35 }}
-          className="animate-float relative"
+          className="relative w-full"
+          style={{ height: "520px" }}
         >
+          {/* Blue halo behind the canvas (canvas is alpha:true so it shows through) */}
           <div
-            className="absolute inset-0 -z-10 blur-3xl"
+            className="absolute inset-0 -z-10 blur-3xl pointer-events-none"
             aria-hidden
             style={{
               background:
-                "radial-gradient(ellipse 60% 80% at 50% 60%, rgba(45,156,255,0.3) 0%, transparent 70%)",
+                "radial-gradient(ellipse 55% 75% at 50% 55%, rgba(45,156,255,0.28) 0%, transparent 70%)",
             }}
           />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/assets/bottle.png"
-            alt="Botol anana Super Oksigen"
-            className="h-[403px] md:h-[518px] w-auto mx-auto rounded-2xl"
-          />
+          <BottleCanvas />
         </motion.div>
 
         {/* Stat callouts */}
