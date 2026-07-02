@@ -33,7 +33,7 @@ export function Hero() {
 
       <BubbleField count={16} />
 
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 py-16 md:py-24 flex flex-col items-center text-center gap-4 md:gap-6">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 py-8 md:py-12 flex flex-col items-center text-center gap-2 md:gap-3">
 
         {/* Principal credit + distributor badge */}
         <motion.div
@@ -42,10 +42,6 @@ export function Hero() {
           transition={{ duration: 0.5 }}
           className="flex flex-wrap items-center justify-center gap-3"
         >
-          <span className="text-xs text-[var(--text-muted)] tracking-wider uppercase">
-            {BRAND.poweredBy}
-          </span>
-          <span className="text-[var(--card-stroke)]">·</span>
           <DistributorBadge />
         </motion.div>
 
@@ -82,7 +78,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35 }}
           className="relative w-full"
-          style={{ height: "520px" }}
+          style={{ height: "380px" }}
         >
           {/* Blue halo */}
           <div
@@ -105,7 +101,7 @@ export function Hero() {
             <img
               src="/assets/bottle.png"
               alt="Botol anana Super Oksigen"
-              className="h-[403px] md:h-[518px] w-auto animate-float"
+              className="h-[340px] md:h-[420px] w-auto animate-float"
             />
           </div>
         </motion.div>
