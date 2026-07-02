@@ -89,10 +89,16 @@ export function Footer() {
               @anana.superoksigen_distributor
             </p>
 
-            {/* QR placeholder */}
-            <div className="mt-2 w-24 h-24 rounded-xl bg-[var(--bg-800)] border border-[var(--card-stroke)] flex items-center justify-center">
-              <p className="text-[9px] text-[var(--text-muted)] text-center leading-tight px-1">
-                Scan QR untuk info lebih lanjut
+            {/* QR code */}
+            <div className="mt-2 flex flex-col gap-1">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/assets/qrcode-wa.png"
+                alt="Scan QR untuk WhatsApp"
+                className="w-24 h-24 rounded-xl border border-[var(--card-stroke)]"
+              />
+              <p className="text-[9px] text-[var(--text-muted)] text-center">
+                Scan untuk WhatsApp
               </p>
             </div>
           </div>
