@@ -56,7 +56,7 @@ export default function UnlockPage() {
     e.preventDefault();
     const pasted = e.clipboardData.getData("text").replace(/\D/g, "").slice(0, PIN_LENGTH);
     const next = Array(PIN_LENGTH).fill("");
-    [...pasted].forEach((d, i) => (next[i] = d));
+    pasted.split("").forEach((d, i) => (next[i] = d));
     setDigits(next);
     inputRefs.current[Math.min(pasted.length, PIN_LENGTH - 1)]?.focus();
     if (pasted.length === PIN_LENGTH) verify(pasted);
