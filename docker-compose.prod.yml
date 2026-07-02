@@ -1,0 +1,39 @@
+# Production compose for VM20 (10.11.11.20)
+# App exposed on host port 3040 (chosen to avoid clashes with existing services).
+# Postgres is internal-only (not published to the host) — reached via the compose network.
+#
+#   docker compose -f docker-compose.prod.yml up --build -d
+#
+services:
+  anana-landing:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "3040:3000"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=postgresql://anana:${POSTGRES_PASSWORD:-anana}@db:5432/anana_analytics
+      # Set these to enable external analytics (optional):
+      # - NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+      # - NEXT_PUBLIC_META_PIXEL=XXXXXXXXXX
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: anana
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-anana}
+      POSTGRES_DB: anana_analytics
+    volumes:
+      - analytics_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U anana -d anana_analytics"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  analytics_pg:
