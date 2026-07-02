@@ -97,7 +97,7 @@ export function Footer() {
                 alt="Scan QR untuk WhatsApp"
                 className="w-24 h-24 rounded-xl border border-[var(--card-stroke)]"
               />
-              <p className="text-[9px] text-[var(--text-muted)] text-center">
+              <p className="text-[9px] text-[var(--text-muted)]">
                 Scan untuk WhatsApp
               </p>
             </div>
