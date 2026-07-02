@@ -302,7 +302,7 @@ export default function UnlockPage() {
 
         {/* Brand watermark */}
         <p className="text-center text-[10px] text-[var(--text-muted)]/40 mt-5 tracking-wider uppercase">
-          anana Super Oksigen · PT. Sumilir
+          anana Super Oksigen · PT. Hijau Sumilir Indonesia
         </p>
       </motion.div>
     </div>

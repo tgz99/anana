@@ -15,7 +15,7 @@ export const PRINCIPAL = {
 };
 
 export const DISTRIBUTOR = {
-  entity: "PT. Sumilir",
+  entity: "PT. Hijau Sumilir Indonesia",
   role: "Brand Owner & Regional Master Distributor",
   regNumber: "NOWI/AMDK-DIST/2026/0002",
 };

@@ -218,7 +218,7 @@ export const KEMITRAAN = {
     {
       icon: "shield-check",
       title: "Didukung Brand Owner & Master Distributor",
-      desc: "PT. Sumilir adalah Brand Owner & Regional Master Distributor resmi anana — produk asli, jaminan kualitas.",
+      desc: "PT. Hijau Sumilir Indonesia adalah Brand Owner & Regional Master Distributor resmi anana — produk asli, jaminan kualitas.",
     },
     {
       icon: "book-open",
@@ -257,7 +257,7 @@ export const FAQ = [
   },
   {
     q: "Di mana mendapatkan ANANA?",
-    a: "Anda bisa mendapatkan ANANA Super Oksigen melalui kami, PT. Sumilir, sebagai Brand Owner & Regional Master Distributor untuk wilayah Jakarta, Depok & Bandung. Hubungi langsung via WhatsApp 0811-236-726 atau kunjungi profil Instagram kami @anana.superoksigen_distributor.",
+    a: "Anda bisa mendapatkan ANANA Super Oksigen melalui kami, PT. Hijau Sumilir Indonesia, sebagai Brand Owner & Regional Master Distributor untuk wilayah Jakarta, Depok & Bandung. Hubungi langsung via WhatsApp 0811-236-726 atau kunjungi profil Instagram kami @anana.superoksigen_distributor.",
   },
 ];
 
