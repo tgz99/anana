@@ -3,8 +3,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.prod
-      args:
-        NEXT_PUBLIC_BASE_PATH: /anana
     ports:
       - "3001:3000"
     environment:

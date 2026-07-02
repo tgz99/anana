@@ -99,7 +99,7 @@ export function Hero() {
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/bottle.png`}
+              src="/assets/bottle.png"
               alt="Botol anana Super Oksigen"
               className="h-[340px] md:h-[420px] w-auto animate-float"
             />
