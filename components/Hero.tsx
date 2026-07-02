@@ -10,21 +10,10 @@ import { BRAND } from "@/lib/content.id";
 import { WA_ORDER, waLink } from "@/lib/config";
 import { trackEvent } from "@/components/ui/Analytics";
 
-// Lazy-loaded 3D scene — only downloads Three.js (~160KB gz) after page is interactive
-const BottleCanvas = dynamic(
-  () => import("@/components/three/BottleCanvas").then((m) => ({ default: m.BottleCanvas })),
-  {
-    ssr: false,
-    // PNG bottle shown instantly while 3D chunk loads
-    loading: () => (
-      // eslint-disable-next-line @next/next/no-img-element
-      <img
-        src="/assets/bottle.png"
-        alt="Botol anana Super Oksigen"
-        className="h-[403px] md:h-[518px] w-auto mx-auto"
-      />
-    ),
-  }
+// Bubble particle canvas — lazy-loaded, no impact on FCP
+const BubbleCanvas = dynamic(
+  () => import("@/components/three/BubbleCanvas").then((m) => ({ default: m.BubbleCanvas })),
+  { ssr: false }
 );
 
 export function Hero() {
@@ -87,7 +76,7 @@ export function Hero() {
           </h2>
         </motion.div>
 
-        {/* 3D Bottle — lazy loaded, PNG fallback during load */}
+        {/* Bottle + bubble particles */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -95,7 +84,7 @@ export function Hero() {
           className="relative w-full"
           style={{ height: "520px" }}
         >
-          {/* Blue halo behind the canvas (canvas is alpha:true so it shows through) */}
+          {/* Blue halo */}
           <div
             className="absolute inset-0 -z-10 blur-3xl pointer-events-none"
             aria-hidden
@@ -104,7 +93,21 @@ export function Hero() {
                 "radial-gradient(ellipse 55% 75% at 50% 55%, rgba(45,156,255,0.28) 0%, transparent 70%)",
             }}
           />
-          <BottleCanvas />
+
+          {/* WebGL bubble particles — fills the container, transparent background */}
+          <div className="absolute inset-0">
+            <BubbleCanvas />
+          </div>
+
+          {/* PNG bottle centered on top of the bubble canvas */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/assets/bottle.png"
+              alt="Botol anana Super Oksigen"
+              className="h-[403px] md:h-[518px] w-auto animate-float"
+            />
+          </div>
         </motion.div>
 
         {/* Stat callouts */}
