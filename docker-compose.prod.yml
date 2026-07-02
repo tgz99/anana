@@ -1,0 +1,32 @@
+services:
+  anana-landing:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    ports:
+      - "3001:3000"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=postgresql://anana:anana@db:5432/anana_analytics
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: anana
+      POSTGRES_PASSWORD: anana
+      POSTGRES_DB: anana_analytics
+    volumes:
+      - anana_analytics_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U anana -d anana_analytics"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+volumes:
+  anana_analytics_pg:
