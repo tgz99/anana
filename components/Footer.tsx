@@ -3,7 +3,7 @@
 import { Instagram, Music2, MessageCircle, ExternalLink } from "lucide-react";
 import { DistributorBadge } from "@/components/ui/DistributorBadge";
 import { BRAND, TESTIMONIAL_DISCLAIMER } from "@/lib/content.id";
-import { WA_ORDER, waLink, SOCIALS, PRINCIPAL, TERRITORY } from "@/lib/config";
+import { WA_ORDER, waLink, SOCIALS, PRINCIPAL, DISTRIBUTOR, TERRITORY } from "@/lib/config";
 import { trackEvent } from "@/components/ui/Analytics";
 
 export function Footer() {
@@ -25,10 +25,15 @@ export function Footer() {
               </p>
             </div>
             <DistributorBadge />
-            <p className="text-xs text-[var(--text-muted)] leading-relaxed">
-              Distributor Resmi anana Super Oksigen.{" "}
-              <span className="text-white">{TERRITORY}</span>.
-            </p>
+            <div className="flex flex-col gap-1">
+              <p className="text-xs text-white font-semibold">{DISTRIBUTOR.entity}</p>
+              <p className="text-xs text-[var(--text-muted)] leading-relaxed">
+                {DISTRIBUTOR.role} · <span className="text-white">{TERRITORY}</span>
+              </p>
+              <p className="text-[10px] text-[var(--text-muted)]">
+                No. Reg: <span className="text-[var(--accent-blue)] font-mono">{DISTRIBUTOR.regNumber}</span>
+              </p>
+            </div>
             <p className="text-xs text-[var(--text-muted)]">
               Produsen: <span className="text-white">{PRINCIPAL.entity}</span>
               <br />
@@ -120,7 +125,7 @@ export function Footer() {
             ⚠️ {TESTIMONIAL_DISCLAIMER}
           </p>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-[var(--text-muted)]">
-            <p>© {year} Distributor Resmi anana Super Oksigen. Semua hak dilindungi.</p>
+            <p>© {year} {DISTRIBUTOR.entity} — Brand Owner &amp; Master Distributor anana Super Oksigen. Semua hak dilindungi.</p>
             <p>
               Produk oleh{" "}
               <a

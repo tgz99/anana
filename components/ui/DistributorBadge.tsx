@@ -7,7 +7,7 @@ export function DistributorBadge({ className = "" }: { className?: string }) {
     >
       <ShieldCheck className="w-4 h-4 text-[var(--accent-blue)]" aria-hidden />
       <span className="text-xs font-bold tracking-widest text-[var(--accent-blue)] uppercase">
-        Distributor Resmi
+        Brand Owner &amp; Master Distributor
       </span>
     </div>
   );

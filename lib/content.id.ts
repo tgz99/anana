@@ -15,8 +15,8 @@ export const BRAND = {
   statLabel: "O₂ OKSIGEN TERLARUT",
   statFivex: "5X LEBIH BANYAK OKSIGEN*",
   positioningStatement:
-    "Lebih dari Air, Ini Oksigen. anana Super Oksigen — air minum berkadar oksigen tinggi dengan teknologi Nano Oxy Bubble™. Sebagai distributor resmi, kami menghadirkannya untuk gaya hidup sehat & aktif di wilayah Anda.",
-  distributorBadge: "DISTRIBUTOR RESMI",
+    "Lebih dari Air, Ini Oksigen. anana Super Oksigen — air minum berkadar oksigen tinggi dengan teknologi Nano Oxy Bubble™. Sebagai Brand Owner & Regional Master Distributor, kami menghadirkannya untuk gaya hidup sehat & aktif di Jakarta, Depok & Bandung.",
+  distributorBadge: "BRAND OWNER & MASTER DISTRIBUTOR",
 };
 
 export const AWARENESS = {
@@ -217,8 +217,8 @@ export const KEMITRAAN = {
     },
     {
       icon: "shield-check",
-      title: "Didukung Distributor Resmi",
-      desc: "Kami distributor resmi anana — produk asli, jaminan kualitas.",
+      title: "Didukung Brand Owner & Master Distributor",
+      desc: "PT. Sumilir adalah Brand Owner & Regional Master Distributor resmi anana — produk asli, jaminan kualitas.",
     },
     {
       icon: "book-open",
@@ -257,7 +257,7 @@ export const FAQ = [
   },
   {
     q: "Di mana mendapatkan ANANA?",
-    a: "Anda bisa mendapatkan ANANA Super Oksigen melalui kami sebagai Distributor Resmi. Hubungi langsung via WhatsApp 0811-236-726 atau kunjungi profil Instagram kami @anana.superoksigen_distributor.",
+    a: "Anda bisa mendapatkan ANANA Super Oksigen melalui kami, PT. Sumilir, sebagai Brand Owner & Regional Master Distributor untuk wilayah Jakarta, Depok & Bandung. Hubungi langsung via WhatsApp 0811-236-726 atau kunjungi profil Instagram kami @anana.superoksigen_distributor.",
   },
 ];
 

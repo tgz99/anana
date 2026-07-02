@@ -13,7 +13,7 @@ import { Footer } from "@/components/Footer";
 import { StickyNav } from "@/components/StickyNav";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { SectionTracker } from "@/components/ui/SectionTracker";
-import { WHATSAPP_NUMBER, PRINCIPAL, TERRITORY } from "@/lib/config";
+import { WHATSAPP_NUMBER, PRINCIPAL, DISTRIBUTOR, TERRITORY } from "@/lib/config";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -33,8 +33,8 @@ const jsonLd = {
     },
     {
       "@type": "LocalBusiness",
-      name: "Distributor Resmi anana Super Oksigen",
-      description: `Distributor Resmi anana Super Oksigen melayani ${TERRITORY}`,
+      name: `${DISTRIBUTOR.entity} — Brand Owner & Master Distributor anana Super Oksigen`,
+      description: `${DISTRIBUTOR.entity} adalah ${DISTRIBUTOR.role} anana Super Oksigen untuk wilayah ${TERRITORY}. No. Reg: ${DISTRIBUTOR.regNumber}`,
       telephone: `+${WHATSAPP_NUMBER}`,
       areaServed: TERRITORY,
       sameAs: [

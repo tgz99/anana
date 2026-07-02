@@ -14,7 +14,13 @@ export const PRINCIPAL = {
   tiktok: "https://www.tiktok.com/@ananasuperoxygen",
 };
 
-export const TERRITORY = "Seluruh Indonesia";
+export const DISTRIBUTOR = {
+  entity: "PT. Sumilir",
+  role: "Brand Owner & Regional Master Distributor",
+  regNumber: "NOWI/AMDK-DIST/2026/0002",
+};
+
+export const TERRITORY = "Jakarta, Depok & Bandung";
 
 export function waLink(msg: string): string {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;

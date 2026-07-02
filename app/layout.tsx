@@ -2,22 +2,24 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import { Analytics, ScrollDepthTracker } from "@/components/ui/Analytics";
-import { TERRITORY } from "@/lib/config";
+import { TERRITORY, DISTRIBUTOR } from "@/lib/config";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://anana-distributor.com"), // Update with actual domain before publish
-  title: "anana Super Oksigen — Distributor Resmi | Nano Oxy Bubble™",
-  description: `Lebih dari Air, Ini Oksigen. anana Super Oksigen — air minum berkadar oksigen tinggi dengan teknologi Nano Oxy Bubble™. Distributor Resmi melayani ${TERRITORY}. Hubungi 0811-236-726.`,
+  title: "anana Super Oksigen — Brand Owner & Master Distributor | Nano Oxy Bubble™",
+  description: `Lebih dari Air, Ini Oksigen. anana Super Oksigen — air minum berkadar oksigen tinggi dengan teknologi Nano Oxy Bubble™. ${DISTRIBUTOR.entity}, ${DISTRIBUTOR.role} wilayah ${TERRITORY}. Hubungi 0811-236-726.`,
   keywords: [
     "anana super oksigen",
     "air minum beroksigen",
     "nano oxy bubble",
     "air sehat",
-    "distributor resmi anana",
-    "oxygenated water indonesia",
+    "master distributor anana",
+    "brand owner anana",
+    "oxygenated water jakarta",
+    "oxygenated water bandung",
   ],
   openGraph: {
-    title: "anana Super Oksigen — Distributor Resmi | Nano Oxy Bubble™",
+    title: "anana Super Oksigen — Brand Owner & Master Distributor | Nano Oxy Bubble™",
     description:
       "Lebih dari Air, Ini Oksigen. Air minum berkadar oksigen tinggi dengan teknologi Nano Oxy Bubble™.",
     images: [{ url: "/assets/og-image.png", width: 1200, height: 630 }],
@@ -26,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "anana Super Oksigen — Distributor Resmi",
+    title: "anana Super Oksigen — Brand Owner & Master Distributor",
     description: "Lebih dari Air, Ini Oksigen. Nano Oxy Bubble™ Technology.",
     images: ["/assets/og-image.png"],
   },

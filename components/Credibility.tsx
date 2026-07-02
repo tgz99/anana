@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ExternalLink, Flag } from "lucide-react";
 import { DistributorBadge } from "@/components/ui/DistributorBadge";
 import { BRAND } from "@/lib/content.id";
-import { PRINCIPAL } from "@/lib/config";
+import { PRINCIPAL, DISTRIBUTOR, TERRITORY } from "@/lib/config";
 
 export function Credibility() {
   return (
@@ -50,6 +50,14 @@ export function Credibility() {
               Produk oleh:{" "}
               <span className="text-white font-semibold">{PRINCIPAL.entity}</span>
             </span>
+          </div>
+          <div className="mt-4 flex flex-col items-center gap-1">
+            <p className="text-sm font-bold text-white">{DISTRIBUTOR.entity}</p>
+            <p className="text-xs text-[var(--text-muted)]">{DISTRIBUTOR.role} · {TERRITORY}</p>
+            <p className="text-[10px] text-[var(--text-muted)]">
+              No. Registrasi Distributor:{" "}
+              <span className="text-[var(--accent-blue)] font-mono font-semibold">{DISTRIBUTOR.regNumber}</span>
+            </p>
           </div>
         </motion.div>
 
