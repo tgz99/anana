@@ -7,6 +7,7 @@ import { Benefits } from "@/components/Benefits";
 import { FeatureGrid } from "@/components/FeatureGrid";
 import { Credibility } from "@/components/Credibility";
 import { Testimonials } from "@/components/Testimonials";
+import { Faq } from "@/components/Faq";
 import { ResellerStrip } from "@/components/ResellerStrip";
 import { Kemitraan } from "@/components/Kemitraan";
 import { Footer } from "@/components/Footer";
@@ -68,6 +69,7 @@ export default function Home() {
         <FeatureGrid />
         <Credibility />
         <Testimonials />
+        <Faq />
         <ResellerStrip />
         <Kemitraan />
       </main>

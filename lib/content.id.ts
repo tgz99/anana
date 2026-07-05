@@ -241,23 +241,23 @@ export const KEMITRAAN = {
 export const FAQ = [
   {
     q: "Apa itu ANANA Super Oksigen?",
-    a: "ANANA Super Oksigen adalah air minum berkadar oksigen tinggi yang diproduksi dengan teknologi Nano Oxy Bubble™. Teknologi ini menghadirkan partikel oksigen ultra halus berukuran 60–100 nanometer yang lebih mudah diserap oleh sel tubuh.",
+    a: "ANANA Super Oksigen adalah air minum berkadar oksigen tinggi yang diproduksi dengan teknologi Nano Oxy Bubble™. Teknologi ini menghadirkan partikel oksigen ultra halus berukuran 60–100 nanometer yang lebih mudah diserap langsung oleh sel tubuh.",
   },
   {
-    q: "Apa bedanya dengan air biasa?",
-    a: "Berbeda dengan air mineral biasa, ANANA Super Oksigen mengandung oksigen terlarut hingga 5 kali lebih banyak* berkat teknologi Nano Oxy Bubble™, sehingga hidrasi dan oksigenasi sel berlangsung lebih optimal.",
+    q: "Apa bedanya dengan air mineral biasa?",
+    a: "Air mineral biasa mengandung oksigen terlarut dalam jumlah sangat terbatas. ANANA Super Oksigen mengandung oksigen terlarut hingga 5× lebih tinggi berkat teknologi Nano Oxy Bubble™, sehingga hidrasi dan oksigenasi sel berlangsung jauh lebih optimal.",
   },
   {
-    q: "Apa itu hipoksia?",
-    a: "Hipoksia adalah kondisi medis di mana sel-sel mitokondria jaringan tubuh mengalami kekurangan oksigen. Kondisi ini dapat menurunkan kinerja organ vital dan meningkatkan risiko berbagai gangguan kesehatan.",
+    q: "Siapa saja yang direkomendasikan mengonsumsi ANANA?",
+    a: "ANANA cocok untuk siapa pun yang ingin menjaga vitalitas hariannya — mulai dari pekerja aktif, atlet, ibu hamil, hingga lansia. Terutama bagi yang tinggal di lingkungan berpolusi tinggi atau memiliki gaya hidup padat yang rentan terhadap kekurangan oksigen.",
   },
   {
-    q: "Apakah aman dikonsumsi setiap hari?",
-    a: "Ya, ANANA Super Oksigen aman dikonsumsi setiap hari. Produk ini merupakan air minum biasa yang diperkaya oksigen dengan teknologi nano dan telah melalui proses produksi yang memenuhi standar keamanan pangan.",
+    q: "Apakah ANANA aman dikonsumsi setiap hari?",
+    a: "Ya, ANANA Super Oksigen sepenuhnya aman dikonsumsi setiap hari. Produk ini adalah air minum yang diperkaya oksigen, bukan suplemen atau obat, sehingga tidak memiliki efek samping dan tidak memerlukan dosis khusus.",
   },
   {
-    q: "Di mana mendapatkan ANANA?",
-    a: "Anda bisa mendapatkan ANANA Super Oksigen melalui kami, PT. Hijau Sumilir Indonesia, sebagai Brand Owner & Regional Master Distributor untuk wilayah Jakarta, Depok & Bandung. Hubungi langsung via WhatsApp 0811-236-726 atau kunjungi profil Instagram kami @anana.superoksigen_distributor.",
+    q: "Di mana saya bisa mendapatkan ANANA?",
+    a: "ANANA Super Oksigen tersedia melalui PT. Hijau Sumilir Indonesia selaku Brand Owner & Regional Master Distributor untuk wilayah Jakarta, Depok & Bandung. Hubungi kami via WhatsApp 0811-236-726 atau Instagram @anana.superoksigen_distributor untuk pemesanan dan informasi lebih lanjut.",
   },
 ];
 
