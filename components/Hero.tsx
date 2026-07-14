@@ -1,5 +1,6 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { ChevronDown, MessageCircle, Users } from "lucide-react";
 import { Button } from "@/components/ui/Button";
@@ -8,6 +9,12 @@ import { BubbleField } from "@/components/ui/BubbleField";
 import { BRAND } from "@/lib/content.id";
 import { WA_ORDER, waLink } from "@/lib/config";
 import { trackEvent } from "@/components/ui/Analytics";
+
+// Bubble particle canvas — lazy-loaded, no impact on FCP
+const BubbleCanvas = dynamic(
+  () => import("@/components/three/BubbleCanvas").then((m) => ({ default: m.BubbleCanvas })),
+  { ssr: false }
+);
 
 export function Hero() {
   return (
@@ -26,7 +33,7 @@ export function Hero() {
 
       <BubbleField count={16} />
 
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 py-16 md:py-24 flex flex-col items-center text-center gap-4 md:gap-6">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 py-8 md:py-12 flex flex-col items-center text-center gap-2 md:gap-3">
 
         {/* Principal credit + distributor badge */}
         <motion.div
@@ -35,10 +42,6 @@ export function Hero() {
           transition={{ duration: 0.5 }}
           className="flex flex-wrap items-center justify-center gap-3"
         >
-          <span className="text-xs text-[var(--text-muted)] tracking-wider uppercase">
-            {BRAND.poweredBy}
-          </span>
-          <span className="text-[var(--card-stroke)]">·</span>
           <DistributorBadge />
         </motion.div>
 
@@ -69,27 +72,38 @@ export function Hero() {
           </h2>
         </motion.div>
 
-        {/* Bottle */}
+        {/* Bottle + bubble particles */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35 }}
-          className="animate-float relative"
+          className="relative w-full"
+          style={{ height: "380px" }}
         >
+          {/* Blue halo */}
           <div
-            className="absolute inset-0 -z-10 blur-3xl"
+            className="absolute inset-0 -z-10 blur-3xl pointer-events-none"
             aria-hidden
             style={{
               background:
-                "radial-gradient(ellipse 60% 80% at 50% 60%, rgba(45,156,255,0.3) 0%, transparent 70%)",
+                "radial-gradient(ellipse 55% 75% at 50% 55%, rgba(45,156,255,0.28) 0%, transparent 70%)",
             }}
           />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/assets/bottle.png"
-            alt="Botol anana Super Oksigen"
-            className="h-[403px] md:h-[518px] w-auto mx-auto rounded-2xl"
-          />
+
+          {/* WebGL bubble particles — fills the container, transparent background */}
+          <div className="absolute inset-0">
+            <BubbleCanvas />
+          </div>
+
+          {/* PNG bottle centered on top of the bubble canvas */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/assets/bottle.png"
+              alt="Botol anana Super Oksigen"
+              className="h-[340px] md:h-[420px] w-auto animate-float"
+            />
+          </div>
         </motion.div>
 
         {/* Stat callouts */}

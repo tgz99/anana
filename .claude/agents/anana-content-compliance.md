@@ -27,7 +27,7 @@ Kamu **read-only** untuk copy: laporkan pelanggaran, jangan ubah teks prinsipal 
 5. **Kesetiaan konten prinsipal.** Bandingkan copy landing dengan konstanta di
    `content.id.ts`. Copy §3 tidak boleh diedit tanpa sign-off prinsipal — bila diff
    menyentuh string ini, tandai dan minta konfirmasi sign-off.
-6. **Identitas benar.** PT. Sumilir = Brand Owner & Regional Master Distributor; prinsipal =
+6. **Identitas benar.** PT. Hijau Sumilir Indonesia = Brand Owner & Regional Master Distributor; prinsipal =
    PT. Nano Oxywater Internasional; wilayah = Jakarta, Depok & Bandung; No. Reg
    `NOWI/AMDK-DIST/2026/0002`. Cek konsistensi dengan [lib/config.ts](../../lib/config.ts).
 

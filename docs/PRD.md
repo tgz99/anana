@@ -1,6 +1,6 @@
 # PRD — anana Super Oksigen Landing Page
 
-**Status:** Live (v0.1.0) · **Owner:** PT. Sumilir (Brand Owner & Regional Master Distributor) · **Last updated:** 2026-07-02
+**Status:** Live (v0.1.0) · **Owner:** PT. Hijau Sumilir Indonesia (Brand Owner & Regional Master Distributor) · **Last updated:** 2026-07-02
 
 ---
 
@@ -8,7 +8,7 @@
 
 Landing page konversi satu-halaman untuk **anana Super Oksigen** — air minum berkadar
 oksigen tinggi dengan teknologi Nano Oxy Bubble™. Halaman ini dioperasikan oleh
-**PT. Sumilir** selaku Brand Owner & Regional Master Distributor untuk wilayah
+**PT. Hijau Sumilir Indonesia** selaku Brand Owner & Regional Master Distributor untuk wilayah
 **Jakarta, Depok & Bandung** (No. Reg: `NOWI/AMDK-DIST/2026/0002`), dengan prinsipal
 **PT. Nano Oxywater Internasional**.
 
@@ -143,7 +143,15 @@ User klik CTA → trackEvent(name, {source})
 ## 9. Backlog / Roadmap
 
 **P0 — Keamanan & kebenaran data**
-- [ ] Autentikasi `/dashboard` (saat ini publik tanpa proteksi).
+- [x] Autentikasi dashboard — dashboard dipindah ke `/viewtraffic`, dilindungi
+      `middleware.ts` (cookie `vt_auth`) + halaman PIN `/viewtraffic/unlock`.
+      `/dashboard` lama kini redirect ke unlock.
+- [ ] **PIN masih `000000` & hardcoded** di `app/api/viewtraffic/verify/route.ts` →
+      pindahkan ke env var (`DASHBOARD_PIN`) dan pakai PIN kuat. Tanpa ini proteksi
+      dashboard praktis tidak berarti.
+- [ ] Rate-limit pada `POST /api/viewtraffic/verify` (PIN 6 digit mudah di-brute-force).
+- [ ] Cookie `vt_auth=granted` bernilai statis tanpa signature → sebaiknya pakai token
+      bertanda tangan (mis. HMAC/JWT) agar tidak bisa dipalsukan manual.
 - [ ] Rate-limit / validasi anti-spam pada `POST /api/events` (event mudah dipalsukan).
 - [ ] Normalisasi funnel: pilih konsisten *event* atau *sesi unik* per langkah.
 

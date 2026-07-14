@@ -6,7 +6,7 @@ PRD lengkap: [docs/PRD.md](docs/PRD.md).
 ## Apa ini
 
 Landing page konversi satu-halaman + dashboard analytics untuk **anana Super Oksigen**
-(air minum beroksigen, teknologi Nano Oxy Bubble™). Dioperasikan oleh **PT. Sumilir**
+(air minum beroksigen, teknologi Nano Oxy Bubble™). Dioperasikan oleh **PT. Hijau Sumilir Indonesia**
 sebagai Brand Owner & Regional Master Distributor (Jakarta, Depok, Bandung).
 
 **Tujuan halaman:** ubah pengunjung → lead WhatsApp (pembeli atau reseller). Semua
@@ -99,10 +99,13 @@ memancarkan `section_view` per section funnel.
 
 - `sessionId` = per-tab-session (`sessionStorage`), bukan per-user. "Unique Sessions" ≈ sesi tab.
 - Funnel dashboard mencampur hitungan *event* dan *sesi unik* antar langkah (lihat PRD §9).
-- `/dashboard` & `POST /api/events` **tanpa auth** — jangan anggap data anti-spam. (backlog P0)
-- `metadataBase` masih placeholder `anana-distributor.com` — perbarui sebelum publish.
+- **PIN dashboard masih `000000` dan di-hardcode** di `app/api/viewtraffic/verify/route.ts`,
+  tanpa rate-limit → praktis belum aman. Pindahkan ke env var + PIN kuat. (backlog P0)
+- `POST /api/events` **tanpa auth/rate-limit** — event mudah dipalsukan. (backlog P0)
 - `og-image.png` dirujuk di metadata tapi mungkin belum ada di `public/assets`.
 - `EngagementQuiz` ada sebagai komponen tapi belum dipasang di `page.tsx`.
+- `next.config.mjs` **wajib** mempertahankan `output: "standalone"` — Dockerfile produksi
+  menjalankan `.next/standalone/server.js`. Menghapusnya akan merusak deploy VM20.
 
 ## Sub-agents & skills
 
