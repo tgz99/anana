@@ -5,7 +5,7 @@ import { Analytics, ScrollDepthTracker } from "@/components/ui/Analytics";
 import { TERRITORY, DISTRIBUTOR } from "@/lib/config";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://anana-distributor.com"), // Update with actual domain before publish
+  metadataBase: new URL("https://ananasuperoxygen.id"),
   title: "anana Super Oksigen — Brand Owner & Master Distributor | Nano Oxy Bubble™",
   description: `Lebih dari Air, Ini Oksigen. anana Super Oksigen — air minum berkadar oksigen tinggi dengan teknologi Nano Oxy Bubble™. ${DISTRIBUTOR.entity}, ${DISTRIBUTOR.role} wilayah ${TERRITORY}. Hubungi 0811-236-726.`,
   keywords: [

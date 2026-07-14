@@ -1,23 +1,33 @@
+# Production compose for VM deployment
+# App exposed on host port 3001 (our VPS: 103.181.182.61)
+# Postgres is internal-only — reached via the compose network.
+#
+#   docker compose -f docker-compose.prod.yml up --build -d
+#
 services:
   anana-landing:
     build:
       context: .
       dockerfile: Dockerfile.prod
+    restart: unless-stopped
     ports:
       - "3001:3000"
     environment:
       - NODE_ENV=production
-      - DATABASE_URL=postgresql://anana:anana@db:5432/anana_analytics
+      - DATABASE_URL=postgresql://anana:${POSTGRES_PASSWORD:-anana}@db:5432/anana_analytics
+      # Set these to enable external analytics (optional):
+      # - NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+      # - NEXT_PUBLIC_META_PIXEL=XXXXXXXXXX
     depends_on:
       db:
         condition: service_healthy
-    restart: unless-stopped
 
   db:
     image: postgres:16-alpine
+    restart: unless-stopped
     environment:
       POSTGRES_USER: anana
-      POSTGRES_PASSWORD: anana
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-anana}
       POSTGRES_DB: anana_analytics
     volumes:
       - anana_analytics_pg:/var/lib/postgresql/data
@@ -26,7 +36,6 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
-    restart: unless-stopped
 
 volumes:
   anana_analytics_pg:
