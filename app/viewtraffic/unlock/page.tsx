@@ -10,6 +10,7 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { Lock, ShieldCheck, AlertCircle } from "lucide-react";
+import { DISTRIBUTOR } from "@/lib/config";
 
 const PIN_LENGTH = 6;
 type Status = "idle" | "verifying" | "error" | "success";
@@ -302,7 +303,7 @@ export default function UnlockPage() {
 
         {/* Brand watermark */}
         <p className="text-center text-[10px] text-[var(--text-muted)]/40 mt-5 tracking-wider uppercase">
-          anana Super Oksigen · PT. Hijau Sumilir Indonesia
+          anana Super Oksigen · {DISTRIBUTOR.entity}
         </p>
       </motion.div>
     </div>
